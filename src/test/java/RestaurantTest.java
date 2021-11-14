@@ -55,4 +55,13 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void selecting_item_soup_and_lasagne_shall_return_totalPrice_as_388_on_calling_method_showTotalOrderPrice() {
+        restaurant.addToMenu("Sweet corn soup", 119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        int totalOrderPrice = service.showTotalOrderPrice("Sweet corn soup", "Vegetable lasagne");
+        service.addRestaurant("Pumpkin Tales", "Chennai", LocalTime.parse("12:00:00"), LocalTime.parse("23:00:00"));
+        assertEquals(388, totalOrderPrice);
+    }
 }
