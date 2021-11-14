@@ -62,4 +62,9 @@ public class Restaurant {
         return name;
     }
 
+    public int showTotalOrderPrice(String item1_name,String item2_name){
+        Item item1 = this.findItemByName(item1_name);
+        Item item2 = this.findItemByName(item2_name);
+        return (item1.getPrice()+item2.getPrice());
+    }
 }
